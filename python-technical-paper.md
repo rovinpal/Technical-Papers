@@ -8,69 +8,69 @@ Example: `fruits = ["apple", "banana", "cherry"]`
 
 ### The methods you'll actually use:
 
-* `append(item)` — adds an item to the end of the list.
+* `append(item)` - adds an item to the end of the list.
 
 fruits.append("mango")
 ```["apple", "banana", "cherry", "mango"]```
 
 
-* `insert(index, item)` — adds an item at a specific position.
+* `insert(index, item)` - adds an item at a specific position.
 
 fruits.insert(1, "kiwi")
 ```["apple", "kiwi", "banana", "cherry"]```
 
 
-* `remove(item)` — removes the first match it finds.
+* `remove(item)` - removes the first match it finds.
 
 fruits.remove("banana")
 ```["apple", "cherry"]```
 
-* `pop(index)` — removes and returns the item at that index. No index? removes the last one.
+* `pop(index)` - removes and returns the item at that index. No index? removes the last one.
 
 fruits.pop(0)
 ```returns "apple", list is now ["banana", "cherry"]```
 
 
-* `sort()` — sorts the list alphabetically or numerically, in place.
+* `sort()` - sorts the list alphabetically or numerically, in place.
 
 nums = [3, 1, 4, 1, 5]
 nums.sort()
 ```[1, 1, 3, 4, 5]```
 
 
-* `reverse()` — flips the list backwards, in place.
+* `reverse()` - flips the list backwards, in place.
 
 fruits.reverse()
 ```["cherry", "banana", "apple"]```
 
 
-* `index(item)` — returns the position of the first match.
+* `index(item)` - returns the position of the first match.
 
 fruits.index("banana")
 ```1```
 
 
-* `count(item)` — counts how many times something appears.
+* `count(item)` - counts how many times something appears.
 
 nums = [1, 2, 2, 3]
 nums.count(2)
 ```2```
 
 
-* `clear()` — empties the whole list.
+* `clear()` - empties the whole list.
 
 fruits.clear()
 ```[]```
 
 
-* `copy()` — returns a copy so you don't mess with the original.
+* `copy()` - returns a copy so you don't mess with the original.
 
 new_list = fruits.copy()
 new_list.append("mango")
 ```fruits is unchanged```
 
 
-* `len()` — not a list method but used all the time. returns the length.
+* `len()` - not a list method but used all the time. returns the length.
 
 len(fruits)
 ```3```
@@ -107,7 +107,7 @@ width, height = get_dimensions()
 
 ## Sets
 
-A set holds unique items only — duplicates are removed automatically. The order doesn't matter and you can't access items by index. Use `{}`.
+A set holds unique items only - duplicates are removed automatically. The order doesn't matter and you can't access items by index. Use `{}`.
 
 Example: `nums = {1, 2, 2, 3, 3}`
 
@@ -115,32 +115,32 @@ Example: `nums = {1, 2, 2, 3, 3}`
 
 ### The methods you'll actually use:
 
-* `add(item)` — adds an item to the set.
+* `add(item)` - adds an item to the set.
 
 nums.add(4)
 ```{1, 2, 3, 4}```
 
-* `remove(item)` — removes an item. raises an error if it doesn't exist.
+* `remove(item)` - removes an item. raises an error if it doesn't exist.
 
 nums.remove(1)
 ```{2, 3, 4}```
 
-* `discard(item)` — same as remove but won't crash if the item isn't there.
+* `discard(item)` - same as remove but won't crash if the item isn't there.
 
 nums.discard(99)
 ```nothing happens```
 
-* `union(set)` — combines two sets, no duplicates.
+* `union(set)` - combines two sets, no duplicates.
 
 {1, 2, 3}.union({3, 4, 5})
 ```{1, 2, 3, 4, 5}```
 
-* `intersection(set)` — returns only the items that exist in both sets.
+* `intersection(set)` - returns only the items that exist in both sets.
 
 {1, 2, 3}.intersection({2, 3, 4})
 ```{2, 3}```
 
-* `in` — the main way to check if something is in a set (very fast).
+* `in` - the main way to check if something is in a set (very fast).
 
 3 in {1, 2, 3}
 ```True```
@@ -165,7 +165,7 @@ person["age"] = 26
 
 ### The methods you'll actually use:
 
-* `get(key)` — returns the value for a key. returns None if the key doesn't exist instead of crashing.
+* `get(key)` - returns the value for a key. returns None if the key doesn't exist instead of crashing.
 
 person.get("name")
 ```"Alex"```
@@ -173,28 +173,28 @@ person.get("name")
 person.get("email")
 ```None```
 
-* `keys()` — returns all the keys.
+* `keys()` - returns all the keys.
 
 person.keys()
 ```dict_keys(["name", "age"])```
 
-* `values()` — returns all the values.
+* `values()` - returns all the values.
 
 person.values()
 ```dict_values(["Alex", 26])```
 
-* `items()` — returns all key-value pairs. great for looping.
+* `items()` - returns all key-value pairs. great for looping.
 
 for key, value in person.items():
     print(key, value)
 ```name Alex  /  age 26```
 
-* `pop(key)` — removes a key and returns its value.
+* `pop(key)` - removes a key and returns its value.
 
 person.pop("age")
 ```returns 26, key is removed```
 
-* `in` — check if a key exists in the dictionary.
+* `in` - check if a key exists in the dictionary.
 
 "name" in person
 ```True```
@@ -206,15 +206,15 @@ person.pop("age")
 `range()` generates a sequence of numbers. You'll use it constantly in for loops. It doesn't actually create a list — it generates numbers one at a time which makes it memory efficient.
 
 range(5)
-```0, 1, 2, 3, 4  — starts at 0 by default```
+```0, 1, 2, 3, 4  - starts at 0 by default```
 
 range(1, 6)
-```1, 2, 3, 4, 5  — start, stop (stop is not included)```
+```1, 2, 3, 4, 5  - start, stop (stop is not included)```
 
 range(0, 10, 2)
-```0, 2, 4, 6, 8  — start, stop, step```
+```0, 2, 4, 6, 8  - start, stop, step```
 
-Most common use — looping a set number of times:
+Most common use - looping a set number of times:
 
 ```python
 for i in range(3):
@@ -243,11 +243,11 @@ name[0:5]
 ```"hello"```
 
 name[::-1]
-```"dlrow olleh"  — reversed```
+```"dlrow olleh"  - reversed```
 
 ### The methods you'll actually use:
 
-* `upper()` / `lower()` — changes the case.
+* `upper()` / `lower()` - changes the case.
 
 "hello".upper()  
 ```"HELLO"```
@@ -256,37 +256,37 @@ name[::-1]
 ```"hello"```
 
 
-* `strip()` — removes whitespace from both ends.
+* `strip()` - removes whitespace from both ends.
 
 "  hello  ".strip()
 ```"hello"```
 
 
-* `split(separator)` — breaks the string into a list.
+* `split(separator)` - breaks the string into a list.
 
 "a,b,c".split(",")
 ```["a", "b", "c"]```
 
 
-* `join(list)` — opposite of split. joins a list into one string.
+* `join(list)` - opposite of split. joins a list into one string.
 
 " ".join(["hello", "world"])
 ```"hello world"```
 
 
-* `replace(old, new)` — swaps one part of the string for another.
+* `replace(old, new)` - swaps one part of the string for another.
 
 "hello world".replace("world", "python")
 ```"hello python"```
 
 
-* `find(substring)` — returns the index of the first match, -1 if not found.
+* `find(substring)` - returns the index of the first match, -1 if not found.
 
 "hello world".find("world")
 ```6```
 
 
-* `count(substring)` — counts how many times something appears.
+* `count(substring)` - counts how many times something appears.
 
 "banana".count("a")
 ```3```
@@ -297,7 +297,7 @@ name[::-1]
 "py" in "python"
 ```True```
 
-* f-strings — the easiest way to put variables inside strings.
+* f-strings - the easiest way to put variables inside strings.
 
 name = "Alex"
 age = 25
@@ -327,9 +327,9 @@ my_dog.bark()  # Rex says woof!
 
 The four main ideas behind OOP:
 
-**Encapsulation** — keep data and the methods that use it inside the same class. Add `__` before an attribute to make it private so outside code can't touch it directly.
+**Encapsulation** - keep data and the methods that use it inside the same class. Add `__` before an attribute to make it private so outside code can't touch it directly.
 
-**Inheritance** — a child class can inherit everything from a parent class and add its own stuff on top.
+**Inheritance** - a child class can inherit everything from a parent class and add its own stuff on top.
 
 ```python
 class Animal:
@@ -346,9 +346,9 @@ d.breathe()  # works because Dog inherits from Animal
 
 Use `super().__init__()` inside the child's `__init__` to also run the parent's setup.
 
-**Polymorphism** — different classes can have a method with the same name and each does it their own way. So you can loop over a mix of objects and just call `.speak()` on all of them without caring what type they are.
+**Polymorphism** - different classes can have a method with the same name and each does it their own way. So you can loop over a mix of objects and just call `.speak()` on all of them without caring what type they are.
 
-**Abstraction** — hide the complex stuff inside the class and only expose what the user needs. They use the object without needing to know how it works inside.
+**Abstraction** - hide the complex stuff inside the class and only expose what the user needs. They use the object without needing to know how it works inside.
 
 
 
@@ -378,11 +378,11 @@ If the function takes arguments, use `*args` and `**kwargs` in the wrapper so th
 
 The three built-in decorators you'll see a lot:
 
-`@staticmethod` — a method that doesn't need `self`. It's just a regular function living inside a class for organization.
+`@staticmethod` - a method that doesn't need `self`. It's just a regular function living inside a class for organization.
 
-`@classmethod` — gets the class itself as `cls` instead of an instance. Used to create alternative ways to build an object.
+`@classmethod` - gets the class itself as `cls` instead of an instance. Used to create alternative ways to build an object.
 
-`@property` — lets you call a method like it's a plain attribute, no parentheses needed. Good for computed values.
+`@property` - lets you call a method like it's a plain attribute, no parentheses needed. Good for computed values.
 
 ```python
 class Circle:
@@ -401,7 +401,7 @@ print(c.area)  # 78.5 — no () needed
 
 ## virtualenv
 
-`virtualenv` creates an isolated Python environment for your project so packages don't clash between projects. Project A might need `django==3.2` and project B might need `django==4.2` — virtualenv keeps them separate.
+`virtualenv` creates an isolated Python environment for your project so packages don't clash between projects. Project A might need `django==3.2` and project B might need `django==4.2` - virtualenv keeps them separate.
 
 ```bash
 pip install virtualenv   # install once
@@ -442,11 +442,11 @@ Always use pip inside a virtual environment. On some systems you'll need `pip3` 
 
 PEP-8 is Python's style guide. It doesn't change how your code runs — it just makes it easier to read.
 
-**Indentation** — 4 spaces per level, never tabs.
+**Indentation** - 4 spaces per level, never tabs.
 
-**Line length** — keep lines under 79 characters.
+**Line length** - keep lines under 79 characters.
 
-**Imports** — always at the top of the file, one per line, grouped: standard library first, then third-party, then your own files, with a blank line between each group.
+**Imports** - always at the top of the file, one per line, grouped: standard library first, then third-party, then your own files, with a blank line between each group.
 
 **Naming:**
 - variables and functions: `snake_case`
@@ -454,18 +454,18 @@ PEP-8 is Python's style guide. It doesn't change how your code runs — it just 
 - constants: `ALL_CAPS`
 - private things: `_leading_underscore`
 
-**Spaces** — put spaces around operators like `=`, `+`, `==`. No spaces inside brackets.
+**Spaces** - put spaces around operators like `=`, `+`, `==`. No spaces inside brackets.
 
-**Comparisons** — use `if thing:` not `if thing == True:`. Use `is None` not `== None`.
+**Comparisons** - use `if thing:` not `if thing == True:`. Use `is None` not `== None`.
 
-**Comments** — explain why, not what. The code already shows what's happening.
+**Comments** - explain why, not what. The code already shows what's happening.
 
-**Docstrings** — use triple quotes to describe what a function does.
+**Docstrings** - use triple quotes to describe what a function does.
 
 ```python
 def add(a, b):
-    """returns the sum of a and b"""
     return a + b
+""returns the sum of a and b"""
 ```
 
 You can check your code with `flake8` — run `pip install flake8` then `flake8 yourfile.py` and it'll point out every style issue.
