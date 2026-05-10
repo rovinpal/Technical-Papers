@@ -6,66 +6,76 @@ In Python, what most languages call an array is called a list. It holds multiple
 
 Example: `fruits = ["apple", "banana", "cherry"]`
 
+
 ### The methods you'll actually use:
 
-`append(item)` — adds an item to the end of the list.
+* `append(item)` — adds an item to the end of the list.
 
 fruits.append("mango")
 ```["apple", "banana", "cherry", "mango"]```
 
 
-`insert(index, item)` — adds an item at a specific position.
+* `insert(index, item)` — adds an item at a specific position.
 
 fruits.insert(1, "kiwi")
 ```["apple", "kiwi", "banana", "cherry"]```
 
-`remove(item)` — removes the first match it finds.
+
+* `remove(item)` — removes the first match it finds.
 
 fruits.remove("banana")
 ```["apple", "cherry"]```
 
-`pop(index)` — removes and returns the item at that index. No index? removes the last one.
+* `pop(index)` — removes and returns the item at that index. No index? removes the last one.
 
 fruits.pop(0)
 ```returns "apple", list is now ["banana", "cherry"]```
 
-`sort()` — sorts the list alphabetically or numerically, in place.
+
+* `sort()` — sorts the list alphabetically or numerically, in place.
 
 nums = [3, 1, 4, 1, 5]
 nums.sort()
 ```[1, 1, 3, 4, 5]```
 
-`reverse()` — flips the list backwards, in place.
+
+* `reverse()` — flips the list backwards, in place.
 
 fruits.reverse()
 ```["cherry", "banana", "apple"]```
 
-`index(item)` — returns the position of the first match.
+
+* `index(item)` — returns the position of the first match.
 
 fruits.index("banana")
 ```1```
 
-`count(item)` — counts how many times something appears.
+
+* `count(item)` — counts how many times something appears.
 
 nums = [1, 2, 2, 3]
 nums.count(2)
 ```2```
 
-`clear()` — empties the whole list.
+
+* `clear()` — empties the whole list.
 
 fruits.clear()
 ```[]```
 
-`copy()` — returns a copy so you don't mess with the original.
+
+* `copy()` — returns a copy so you don't mess with the original.
 
 new_list = fruits.copy()
 new_list.append("mango")
 ```fruits is unchanged```
 
-`len()` — not a list method but used all the time. returns the length.
+
+* `len()` — not a list method but used all the time. returns the length.
 
 len(fruits)
 ```3```
+
 
 
 ## Strings
@@ -74,9 +84,10 @@ A string is just text. Strings can't be changed in place — every method return
 
 Example: `name = "hello world"`
 
+
 ### The methods you'll actually use:
 
-`upper()` / `lower()` — changes the case.
+* `upper()` / `lower()` — changes the case.
 
 "hello".upper()  
 ```"HELLO"```
@@ -84,55 +95,55 @@ Example: `name = "hello world"`
 "HELLO".lower()  
 ```"hello"```
 
-`strip()` — removes whitespace from both ends.
+
+* `strip()` — removes whitespace from both ends.
 
 "  hello  ".strip()
 ```"hello"```
 
-`split(separator)` — breaks the string into a list.
+
+* `split(separator)` — breaks the string into a list.
 
 "a,b,c".split(",")
 ```["a", "b", "c"]```
 
-`join(list)` — opposite of split. joins a list into one string.
+
+* `join(list)` — opposite of split. joins a list into one string.
 
 " ".join(["hello", "world"])
 ```"hello world"```
 
-`replace(old, new)` — swaps one part of the string for another.
+
+* `replace(old, new)` — swaps one part of the string for another.
 
 "hello world".replace("world", "python")
 ```"hello python"```
 
-`find(substring)` — returns the index of the first match, -1 if not found.
+
+* `find(substring)` — returns the index of the first match, -1 if not found.
 
 "hello world".find("world")
 ```6```
 
-`startswith()` / `endswith()` — returns True or False.
 
-"report.pdf".startswith("report")  
-```True```
-
-"report.pdf".endswith(".pdf")     
-```True```
-
-`count(substring)` — counts how many times something appears.
+* `count(substring)` — counts how many times something appears.
 
 "banana".count("a")
 ```3```
 
-`in` — checks if something is inside a string.
+
+* `in` — checks if something is inside a string.
 
 "py" in "python"
 ```True```
 
-f-strings — the easiest way to put variables inside strings.
+* f-strings — the easiest way to put variables inside strings.
 
 name = "Alex"
 age = 25
 print(f"my name is {name} and i am {age} years old")
 ```"my name is Alex and i am 25 years old"```
+
 
 
 ## Objects and Object-Oriented Programming (OOP)
@@ -178,6 +189,7 @@ Use `super().__init__()` inside the child's `__init__` to also run the parent's 
 **Polymorphism** — different classes can have a method with the same name and each does it their own way. So you can loop over a mix of objects and just call `.speak()` on all of them without caring what type they are.
 
 **Abstraction** — hide the complex stuff inside the class and only expose what the user needs. They use the object without needing to know how it works inside.
+
 
 
 ## Decorators
@@ -226,6 +238,7 @@ print(c.area)  # 78.5 — no () needed
 ```
 
 
+
 ## virtualenv
 
 `virtualenv` creates an isolated Python environment for your project so packages don't clash between projects. Project A might need `django==3.2` and project B might need `django==4.2` — virtualenv keeps them separate.
@@ -246,6 +259,7 @@ pip install -r requirements.txt  # install from that file
 ```
 
 
+
 ## pip Package Manager
 
 `pip` is Python's package installer. It downloads packages from PyPI, which is basically a huge library of free Python tools anyone can publish to.
@@ -261,6 +275,7 @@ pip list --outdated               # see what needs updating
 ```
 
 Always use pip inside a virtual environment. On some systems you'll need `pip3` to make sure it targets Python 3.
+
 
 
 ## PEP-8 Standards
