@@ -2,147 +2,302 @@
 
 ## Arrays (Lists)
 
-In Python, what most languages call an array is called a list. It holds multiple items in one variable in order.
+In Python, what most languages call an array is called a list. It holds multiple items in one variable in order. Lists are mutable — meaning you can change them after creating them.
 
 Example: `fruits = ["apple", "banana", "cherry"]`
-
 
 ### The methods you'll actually use:
 
 * `append(item)` — adds an item to the end of the list.
 
-fruits.append("mango")
-```["apple", "banana", "cherry", "mango"]```
+```fruits.append("mango")
+["apple", "banana", "cherry", "mango"]```
 
 
 * `insert(index, item)` — adds an item at a specific position.
 
-fruits.insert(1, "kiwi")
-```["apple", "kiwi", "banana", "cherry"]```
+```fruits.insert(1, "kiwi")
+["apple", "kiwi", "banana", "cherry"]```
 
 
 * `remove(item)` — removes the first match it finds.
 
-fruits.remove("banana")
-```["apple", "cherry"]```
+```fruits.remove("banana")
+["apple", "cherry"]```
 
 * `pop(index)` — removes and returns the item at that index. No index? removes the last one.
 
-fruits.pop(0)
-```returns "apple", list is now ["banana", "cherry"]```
+```fruits.pop(0)
+returns "apple", list is now ["banana", "cherry"]```
 
 
 * `sort()` — sorts the list alphabetically or numerically, in place.
 
-nums = [3, 1, 4, 1, 5]
+```nums = [3, 1, 4, 1, 5]
 nums.sort()
-```[1, 1, 3, 4, 5]```
+[1, 1, 3, 4, 5]```
 
 
 * `reverse()` — flips the list backwards, in place.
 
-fruits.reverse()
-```["cherry", "banana", "apple"]```
+```fruits.reverse()
+["cherry", "banana", "apple"]```
 
 
 * `index(item)` — returns the position of the first match.
 
-fruits.index("banana")
-```1```
+```fruits.index("banana")
+1```
 
 
 * `count(item)` — counts how many times something appears.
 
-nums = [1, 2, 2, 3]
+```nums = [1, 2, 2, 3]
 nums.count(2)
-```2```
+2```
 
 
 * `clear()` — empties the whole list.
 
-fruits.clear()
-```[]```
+```fruits.clear()
+[]```
 
 
 * `copy()` — returns a copy so you don't mess with the original.
 
-new_list = fruits.copy()
+```new_list = fruits.copy()
 new_list.append("mango")
-```fruits is unchanged```
+fruits is unchanged```
 
 
 * `len()` — not a list method but used all the time. returns the length.
 
-len(fruits)
-```3```
+```len(fruits)
+3```
 
+
+
+## Tuples
+
+A tuple is like a list but you can't change it once it's created. That's called immutable. Use `()` instead of `[]`. Because it can't be changed it's faster and safer for data that shouldn't be modified.
+
+Example: `point = (10, 20)`
+
+You can still access items by index, you just can't add, remove, or change them.
+
+```point[0]
+10```
+
+```point[1]
+20```
+
+If you try to change a value it'll crash:
+```# point[0] = 99  <- TypeError, tuples can't be changed```
+
+A common use case is returning multiple values from a function:
+```
+def get_dimensions():
+    return (1920, 1080)
+
+width, height = get_dimensions()
+```
+
+
+## Sets
+
+A set holds unique items only — duplicates are removed automatically. The order doesn't matter and you can't access items by index. Use `{}`.
+
+Example: `nums = {1, 2, 2, 3, 3}`
+
+```{1, 2, 3}  # duplicates are gone```
+
+### The methods you'll actually use:
+
+* `add(item)` — adds an item to the set.
+
+```nums.add(4)
+{1, 2, 3, 4}```
+
+* `remove(item)` — removes an item. raises an error if it doesn't exist.
+
+```nums.remove(1)
+{2, 3, 4}```
+
+* `discard(item)` — same as remove but won't crash if the item isn't there.
+
+```nums.discard(99)
+nothing happens```
+
+* `union(set)` — combines two sets, no duplicates.
+
+```{1, 2, 3}.union({3, 4, 5})
+{1, 2, 3, 4, 5}```
+
+* `intersection(set)` — returns only the items that exist in both sets.
+
+```{1, 2, 3}.intersection({2, 3, 4})
+{2, 3}```
+
+* `in` — the main way to check if something is in a set (very fast).
+
+```3 in {1, 2, 3}
+True```
+
+
+## Dictionaries
+
+A dictionary stores key-value pairs. Think of it like a real dictionary — the word is the key and the definition is the value. Use `{}` with colons.
+
+Example: `person = {"name": "Alex", "age": 25}`
+
+Access a value by its key:
+
+```person["name"]
+"Alex"```
+
+Add or update a value:
+
+```person["age"] = 26
+{"name": "Alex", "age": 26}```
+
+### The methods you'll actually use:
+
+* `get(key)` — returns the value for a key. returns None if the key doesn't exist instead of crashing.
+
+```person.get("name")
+"Alex"```
+
+```person.get("email")
+None```
+
+* `keys()` — returns all the keys.
+
+```person.keys()
+dict_keys(["name", "age"])```
+
+* `values()` — returns all the values.
+
+```person.values()
+dict_values(["Alex", 26])```
+
+* `items()` — returns all key-value pairs. great for looping.
+
+for key, value in person.items():
+    print(key, value)
+```name Alex  /  age 26```
+
+* `pop(key)` — removes a key and returns its value.
+
+```person.pop("age")
+returns 26, key is removed```
+
+* `in` — check if a key exists in the dictionary.
+
+```"name" in person
+True```
+
+
+## Range
+
+`range()` generates a sequence of numbers. You'll use it constantly in for loops. It doesn't actually create a list — it generates numbers one at a time which makes it memory efficient.
+
+```range(5)
+0, 1, 2, 3, 4  — starts at 0 by default```
+
+```range(1, 6)
+1, 2, 3, 4, 5  — start, stop (stop is not included)```
+
+```range(0, 10, 2)
+0, 2, 4, 6, 8  — start, stop, step```
+
+Most common use — looping a set number of times:
+
+```
+for i in range(3):
+    print(i)
+# 0
+# 1
+# 2
+```
+
+If you need an actual list from it, wrap it in `list()`:
+
+```list(range(5))
+[0, 1, 2, 3, 4]```
 
 
 ## Strings
 
-A string is just text. Strings can't be changed in place — every method returns a new string.
+A string is just text. Strings are also a sequence type — just like lists and tuples — which is why slicing works the same way on all of them. Strings can't be changed in place — every method returns a new string.
 
 Example: `name = "hello world"`
 
+Slicing works the same as lists:
+
+```name[0:5]
+"hello"```
+
+```name[::-1]
+"dlrow olleh"  — reversed```
 
 ### The methods you'll actually use:
 
 * `upper()` / `lower()` — changes the case.
 
-"hello".upper()  
-```"HELLO"```
+```"hello".upper()  
+"HELLO"```
 
-"HELLO".lower()  
-```"hello"```
+```"HELLO".lower()  
+"hello"```
 
 
 * `strip()` — removes whitespace from both ends.
 
-"  hello  ".strip()
-```"hello"```
+```"  hello  ".strip()
+"hello"```
 
 
 * `split(separator)` — breaks the string into a list.
 
-"a,b,c".split(",")
-```["a", "b", "c"]```
+```"a,b,c".split(",")
+["a", "b", "c"]```
 
 
 * `join(list)` — opposite of split. joins a list into one string.
 
-" ".join(["hello", "world"])
-```"hello world"```
+```" ".join(["hello", "world"])
+"hello world"```
 
 
 * `replace(old, new)` — swaps one part of the string for another.
 
-"hello world".replace("world", "python")
-```"hello python"```
+```"hello world".replace("world", "python")
+"hello python"```
 
 
 * `find(substring)` — returns the index of the first match, -1 if not found.
 
-"hello world".find("world")
-```6```
+```"hello world".find("world")
+6```
 
 
 * `count(substring)` — counts how many times something appears.
 
-"banana".count("a")
-```3```
+```"banana".count("a")
+3```
 
 
 * `in` — checks if something is inside a string.
 
-"py" in "python"
-```True```
+```"py" in "python"
+True```
 
 * f-strings — the easiest way to put variables inside strings.
 
-name = "Alex"
+```name = "Alex"
 age = 25
 print(f"my name is {name} and i am {age} years old")
-```"my name is Alex and i am 25 years old"```
+"my name is Alex and i am 25 years old"```
 
 
 
