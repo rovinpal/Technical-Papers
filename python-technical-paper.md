@@ -10,72 +10,73 @@ Example: `fruits = ["apple", "banana", "cherry"]`
 
 * `append(item)` — adds an item to the end of the list.
 
-```fruits.append("mango")
-["apple", "banana", "cherry", "mango"]```
+fruits.append("mango")
+```["apple", "banana", "cherry", "mango"]```
 
 
 * `insert(index, item)` — adds an item at a specific position.
 
-```fruits.insert(1, "kiwi")
-["apple", "kiwi", "banana", "cherry"]```
+fruits.insert(1, "kiwi")
+```["apple", "kiwi", "banana", "cherry"]```
 
 
 * `remove(item)` — removes the first match it finds.
 
-```fruits.remove("banana")
-["apple", "cherry"]```
+fruits.remove("banana")
+```["apple", "cherry"]```
 
 * `pop(index)` — removes and returns the item at that index. No index? removes the last one.
 
-```fruits.pop(0)
-returns "apple", list is now ["banana", "cherry"]```
+fruits.pop(0)
+```returns "apple", list is now ["banana", "cherry"]```
 
 
 * `sort()` — sorts the list alphabetically or numerically, in place.
 
-```nums = [3, 1, 4, 1, 5]
+nums = [3, 1, 4, 1, 5]
 nums.sort()
-[1, 1, 3, 4, 5]```
+```[1, 1, 3, 4, 5]```
 
 
 * `reverse()` — flips the list backwards, in place.
 
-```fruits.reverse()
-["cherry", "banana", "apple"]```
+fruits.reverse()
+```["cherry", "banana", "apple"]```
 
 
 * `index(item)` — returns the position of the first match.
 
-```fruits.index("banana")
-1```
+fruits.index("banana")
+```1```
 
 
 * `count(item)` — counts how many times something appears.
 
-```nums = [1, 2, 2, 3]
+nums = [1, 2, 2, 3]
 nums.count(2)
-2```
+```2```
 
 
 * `clear()` — empties the whole list.
 
-```fruits.clear()
-[]```
+fruits.clear()
+```[]```
 
 
 * `copy()` — returns a copy so you don't mess with the original.
 
-```new_list = fruits.copy()
+new_list = fruits.copy()
 new_list.append("mango")
-fruits is unchanged```
+```fruits is unchanged```
 
 
 * `len()` — not a list method but used all the time. returns the length.
 
-```len(fruits)
-3```
+len(fruits)
+```3```
 
 
+---
 
 ## Tuples
 
@@ -85,23 +86,24 @@ Example: `point = (10, 20)`
 
 You can still access items by index, you just can't add, remove, or change them.
 
-```point[0]
-10```
+point[0]
+```10```
 
-```point[1]
-20```
+point[1]
+```20```
 
 If you try to change a value it'll crash:
 ```# point[0] = 99  <- TypeError, tuples can't be changed```
 
 A common use case is returning multiple values from a function:
-```
+```python
 def get_dimensions():
     return (1920, 1080)
 
 width, height = get_dimensions()
 ```
 
+---
 
 ## Sets
 
@@ -115,34 +117,35 @@ Example: `nums = {1, 2, 2, 3, 3}`
 
 * `add(item)` — adds an item to the set.
 
-```nums.add(4)
-{1, 2, 3, 4}```
+nums.add(4)
+```{1, 2, 3, 4}```
 
 * `remove(item)` — removes an item. raises an error if it doesn't exist.
 
-```nums.remove(1)
-{2, 3, 4}```
+nums.remove(1)
+```{2, 3, 4}```
 
 * `discard(item)` — same as remove but won't crash if the item isn't there.
 
-```nums.discard(99)
-nothing happens```
+nums.discard(99)
+```nothing happens```
 
 * `union(set)` — combines two sets, no duplicates.
 
-```{1, 2, 3}.union({3, 4, 5})
-{1, 2, 3, 4, 5}```
+{1, 2, 3}.union({3, 4, 5})
+```{1, 2, 3, 4, 5}```
 
 * `intersection(set)` — returns only the items that exist in both sets.
 
-```{1, 2, 3}.intersection({2, 3, 4})
-{2, 3}```
+{1, 2, 3}.intersection({2, 3, 4})
+```{2, 3}```
 
 * `in` — the main way to check if something is in a set (very fast).
 
-```3 in {1, 2, 3}
-True```
+3 in {1, 2, 3}
+```True```
 
+---
 
 ## Dictionaries
 
@@ -152,33 +155,33 @@ Example: `person = {"name": "Alex", "age": 25}`
 
 Access a value by its key:
 
-```person["name"]
-"Alex"```
+person["name"]
+```"Alex"```
 
 Add or update a value:
 
-```person["age"] = 26
-{"name": "Alex", "age": 26}```
+person["age"] = 26
+```{"name": "Alex", "age": 26}```
 
 ### The methods you'll actually use:
 
 * `get(key)` — returns the value for a key. returns None if the key doesn't exist instead of crashing.
 
-```person.get("name")
-"Alex"```
+person.get("name")
+```"Alex"```
 
-```person.get("email")
-None```
+person.get("email")
+```None```
 
 * `keys()` — returns all the keys.
 
-```person.keys()
-dict_keys(["name", "age"])```
+person.keys()
+```dict_keys(["name", "age"])```
 
 * `values()` — returns all the values.
 
-```person.values()
-dict_values(["Alex", 26])```
+person.values()
+```dict_values(["Alex", 26])```
 
 * `items()` — returns all key-value pairs. great for looping.
 
@@ -188,31 +191,32 @@ for key, value in person.items():
 
 * `pop(key)` — removes a key and returns its value.
 
-```person.pop("age")
-returns 26, key is removed```
+person.pop("age")
+```returns 26, key is removed```
 
 * `in` — check if a key exists in the dictionary.
 
-```"name" in person
-True```
+"name" in person
+```True```
 
+---
 
 ## Range
 
 `range()` generates a sequence of numbers. You'll use it constantly in for loops. It doesn't actually create a list — it generates numbers one at a time which makes it memory efficient.
 
-```range(5)
-0, 1, 2, 3, 4  — starts at 0 by default```
+range(5)
+```0, 1, 2, 3, 4  — starts at 0 by default```
 
-```range(1, 6)
-1, 2, 3, 4, 5  — start, stop (stop is not included)```
+range(1, 6)
+```1, 2, 3, 4, 5  — start, stop (stop is not included)```
 
-```range(0, 10, 2)
-0, 2, 4, 6, 8  — start, stop, step```
+range(0, 10, 2)
+```0, 2, 4, 6, 8  — start, stop, step```
 
 Most common use — looping a set number of times:
 
-```
+```python
 for i in range(3):
     print(i)
 # 0
@@ -222,9 +226,10 @@ for i in range(3):
 
 If you need an actual list from it, wrap it in `list()`:
 
-```list(range(5))
-[0, 1, 2, 3, 4]```
+list(range(5))
+```[0, 1, 2, 3, 4]```
 
+---
 
 ## Strings
 
@@ -234,70 +239,70 @@ Example: `name = "hello world"`
 
 Slicing works the same as lists:
 
-```name[0:5]
-"hello"```
+name[0:5]
+```"hello"```
 
-```name[::-1]
-"dlrow olleh"  — reversed```
+name[::-1]
+```"dlrow olleh"  — reversed```
 
 ### The methods you'll actually use:
 
 * `upper()` / `lower()` — changes the case.
 
-```"hello".upper()  
-"HELLO"```
+"hello".upper()  
+```"HELLO"```
 
-```"HELLO".lower()  
-"hello"```
+"HELLO".lower()  
+```"hello"```
 
 
 * `strip()` — removes whitespace from both ends.
 
-```"  hello  ".strip()
-"hello"```
+"  hello  ".strip()
+```"hello"```
 
 
 * `split(separator)` — breaks the string into a list.
 
-```"a,b,c".split(",")
-["a", "b", "c"]```
+"a,b,c".split(",")
+```["a", "b", "c"]```
 
 
 * `join(list)` — opposite of split. joins a list into one string.
 
-```" ".join(["hello", "world"])
-"hello world"```
+" ".join(["hello", "world"])
+```"hello world"```
 
 
 * `replace(old, new)` — swaps one part of the string for another.
 
-```"hello world".replace("world", "python")
-"hello python"```
+"hello world".replace("world", "python")
+```"hello python"```
 
 
 * `find(substring)` — returns the index of the first match, -1 if not found.
 
-```"hello world".find("world")
-6```
+"hello world".find("world")
+```6```
 
 
 * `count(substring)` — counts how many times something appears.
 
-```"banana".count("a")
-3```
+"banana".count("a")
+```3```
 
 
 * `in` — checks if something is inside a string.
 
-```"py" in "python"
-True```
+"py" in "python"
+```True```
 
 * f-strings — the easiest way to put variables inside strings.
 
-```name = "Alex"
+name = "Alex"
 age = 25
 print(f"my name is {name} and i am {age} years old")
-"my name is Alex and i am 25 years old"```
+```"my name is Alex and i am 25 years old"```
 
 
 
@@ -305,7 +310,7 @@ print(f"my name is {name} and i am {age} years old")
 
 OOP is a way of organizing your code around things (objects) instead of just functions. Think of it like a blueprint and a house — the blueprint is the class, and the house is the object (also called an instance).
 
-```
+```python
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -326,7 +331,7 @@ The four main ideas behind OOP:
 
 **Inheritance** — a child class can inherit everything from a parent class and add its own stuff on top.
 
-```
+```python
 class Animal:
     def breathe(self):
         print("breathing")
@@ -351,7 +356,7 @@ Use `super().__init__()` inside the child's `__init__` to also run the parent's 
 
 A decorator is a function that wraps another function to add behavior before or after it runs, without changing the original function's code. The `@` symbol is just shorthand for applying it.
 
-```
+```python
 def shout(func):
     def wrapper():
         print("starting...")
@@ -379,7 +384,7 @@ The three built-in decorators you'll see a lot:
 
 `@property` — lets you call a method like it's a plain attribute, no parentheses needed. Good for computed values.
 
-```
+```python
 class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -398,7 +403,7 @@ print(c.area)  # 78.5 — no () needed
 
 `virtualenv` creates an isolated Python environment for your project so packages don't clash between projects. Project A might need `django==3.2` and project B might need `django==4.2` — virtualenv keeps them separate.
 
-```
+```bash
 pip install virtualenv   # install once
 virtualenv venv          # create the environment
 source venv/bin/activate # activate it (Mac/Linux)
@@ -408,7 +413,7 @@ venv\Scripts\activate    # activate it (Windows)
 Your terminal will show `(venv)` when it's active. Anything you install now stays inside this environment only. To leave it just run `deactivate`.
 
 Save your dependencies so others can recreate your setup:
-```
+```bash
 pip freeze > requirements.txt
 pip install -r requirements.txt  # install from that file
 ```
@@ -419,7 +424,7 @@ pip install -r requirements.txt  # install from that file
 
 `pip` is Python's package installer. It downloads packages from PyPI, which is basically a huge library of free Python tools anyone can publish to.
 
-```
+```bash
 pip install requests              # install a package
 pip install requests==2.28.0      # install a specific version
 pip install --upgrade requests    # upgrade to the latest version
@@ -457,7 +462,7 @@ PEP-8 is Python's style guide. It doesn't change how your code runs — it just 
 
 **Docstrings** — use triple quotes to describe what a function does.
 
-```
+```python
 def add(a, b):
     """returns the sum of a and b"""
     return a + b
